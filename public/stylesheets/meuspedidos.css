@@ -1,0 +1,83 @@
+/* public/css/meuspedidos.css */
+
+/* Estilos para a lista de pedidos */
+.order-list {
+    margin-top: 2rem;
+  }
+  
+  .order-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+  }
+  
+  .order-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .order-id, .order-date, .order-status, .importer-name, .order-time {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .order-id {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .order-status.text-warning {
+    color: #ffc107;
+    font-size: 1.1rem;
+  }
+  
+  .order-status.text-success {
+    color: #28a745;
+    font-size: 1.1rem;
+  }
+  
+  .product-item {
+    margin-bottom: 1rem;
+  }
+  
+  .product-image {
+    width: 120px; /* Aumentando o tamanho da imagem */
+    height: 120px; /* Aumentando o tamanho da imagem */
+    object-fit: cover;
+  }
+  
+  .product-info {
+    flex: 1;
+  }
+  
+  .product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-price, .product-quantity, .importer-name, .order-time {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.25rem;
+  }
+  
+  .btn-primary {
+    background-color: #00AEEF;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #008FCC;
+  }
+  
+  .btn-success {
+    background-color: #28A745;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  

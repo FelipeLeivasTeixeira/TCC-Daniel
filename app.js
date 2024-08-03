@@ -13,6 +13,11 @@ var produtosRouter = require('./routes/produtos');
 var chatRouter = require('./routes/chat');
 var perfilImportadorRouter = require('./routes/perfilImportador');
 var loginRouter = require('./routes/login');
+var meuspedidosRouter = require('./routes/meuspedidos');
+var edicaoclienteRouter = require('./routes/edicaocliente');
+var painelRouter = require('./routes/painel');
+var adicionarprodutoRouter = require('./routes/adicionarproduto');
+
 
 var app = express();
 
@@ -36,6 +41,13 @@ app.use('/produtos', produtosRouter);
 app.use('/chat', chatRouter);
 app.use('/perfilImportador', perfilImportadorRouter);
 app.use('/login', loginRouter);
+app.use('/meuspedidos', meuspedidosRouter);
+app.use('/edicaocliente', edicaoclienteRouter);
+app.use('/painel', painelRouter);
+app.use('/adicionarproduto', adicionarprodutoRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
