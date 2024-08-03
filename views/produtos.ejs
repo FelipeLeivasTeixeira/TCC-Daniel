@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Produtos - ImportAê</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main class="fade-in">
+        <div class="container mt-4">
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <input type="text" class="form-control" placeholder="Pesquisar produtos...">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-block">Pesquisar</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Section -->
+        <div class="container">
+            <div class="row">
+                <!-- Filter Section -->
+                <div class="col-md-3">
+                    <h5 class="filter-title">Filtros</h5>
+                    <div class="filter-section">
+                        <h6>Enviado De</h6>
+                        <div>
+                            <input type="checkbox" id="estadosUnidos">
+                            <label for="estadosUnidos">Estados Unidos</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="china">
+                            <label for="china">China</label>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <h6>Faixa de Preço</h6>
+                        <div>
+                            <input type="checkbox" id="ate50">
+                            <label for="ate50">Até R$50</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="50a100">
+                            <label for="50a100">R$50 - R$100</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="100a200">
+                            <label for="100a200">R$100 - R$200</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="acima200">
+                            <label for="acima200">Acima de R$200</label>
+                        </div>
+                    </div>
+                    <div class="filter-section">
+                        <h6>Ordenar Por</h6>
+                        <div>
+                            <input type="radio" id="melhorAvaliacao" name="ordenarPor">
+                            <label for="melhorAvaliacao">Melhor Avaliação</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="precoMaisBaixo" name="ordenarPor">
+                            <label for="precoMaisBaixo">Preço Mais Baixo</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="precoMaisAlto" name="ordenarPor">
+                            <label for="precoMaisAlto">Preço Mais Alto</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block mt-4">Filtrar</button>
+                </div>
+                
+                <!-- Products Listing Section -->
+                <div class="col-md-9">
+                    <div class="row">
+                        <% for(let i = 0; i < 6; i++) { %>
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="images/front/indexfrente.jpeg" class="card-img-top" alt="Nome do Produto">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Nome do Produto</h5>
+                                        <p class="card-text">Preço: R$ 100,00</p>
+                                        <p class="card-text">Origem: China</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="profile-picture-circle mr-2">
+                                                <img src="images/front/fotopadrao.png" alt="Foto do Importador">
+                                            </div>
+                                            <div>
+                                                <p class="mb-0">Nome do Importador</p>
+                                                <p class="mb-0">Avaliação: 4.5/5</p>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="btn btn-primary btn-block">Comprar</a>
+                                        <a href="#" class="btn btn-success btn-block">Conversar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvvV8AB8If5q4l78CM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlNHjR0AyyQp+d6EFx/q28X1Txswg6w+jfXp65XOZV+5ckb8j4i5I+X0oeg" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+dflw6E5iqKuxau6/6L5D1GyTne0IWeC52Bvrpt9CH25R1wEl" crossorigin="anonymous"></script>
+</body>
+</html>
