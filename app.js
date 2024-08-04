@@ -17,6 +17,10 @@ var meuspedidosRouter = require('./routes/meuspedidos');
 var edicaoclienteRouter = require('./routes/edicaocliente');
 var painelRouter = require('./routes/painel');
 var adicionarprodutoRouter = require('./routes/adicionarproduto');
+var meusprodutosRouter = require('./routes/meusprodutos');
+var meuspedidosimportadorRouter = require('./routes/meuspedidosimportador');
+var chatimportadorRouter = require('./routes/chatimportador');
+
 
 
 var app = express();
@@ -45,6 +49,9 @@ app.use('/meuspedidos', meuspedidosRouter);
 app.use('/edicaocliente', edicaoclienteRouter);
 app.use('/painel', painelRouter);
 app.use('/adicionarproduto', adicionarprodutoRouter);
+app.use('/meusprodutos', meusprodutosRouter);
+app.use('/meuspedidosimportador', meuspedidosimportadorRouter);
+app.use('/chatimportador', chatimportadorRouter);
 
 
 

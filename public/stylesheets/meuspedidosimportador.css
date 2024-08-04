@@ -1,0 +1,104 @@
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F2F2;
+    color: #333;
+    margin: 0;
+  }
+  
+  .fade-in {
+    animation: fadeIn 2s ease-in;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #007bff;
+  }
+  
+  .order-list {
+    margin-top: 20px;
+  }
+  
+  .order-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .order-header h5 {
+    margin: 0;
+  }
+  
+  .order-date {
+    margin: 0;
+  }
+  
+  .badge-warning {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
+  .badge-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .order-body p {
+    margin: 5px 0;
+  }
+  
+  .order-footer {
+    margin-top: 15px;
+  }
+  
+  .btn-success {
+    background-color: #28A745;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .btn-primary {
+    background-color: #00AEEF;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #008FCC;
+  }
+  
+  .bi-coin, .bi-credit-card {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+
+/* Alinhar mensagens do cliente à esquerda */
+.message.client .message-content {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.message.client .profile-picture-circle {
+    margin-right: 10px;
+}
+
+/* Alinhar mensagens do importador à direita */
+.message.importer {
+    flex-direction: row-reverse;
+}
+
+.message.importer .message-content {
+    background-color: #00AEEF;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.importer .profile-picture-circle {
+    margin-left: 10px;
+    margin-right: 0;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com Clientes - ImportAê</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/chatimportador.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-iBBdHYFq55yUnEad5ncmKbf2l5DsOSD0hC8WIp6PWK0UVKBC1M5la2skTY2G7O/2" crossorigin="anonymous">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="nav flex-column nav-pills" id="importerPanel" role="tablist" aria-orientation="vertical">
+                    <li class="nav-item">
+                        <a class="nav-link" id="minhas-informacoes-tab" data-toggle="pill" href="#minhas-informacoes" role="tab" aria-controls="minhas-informacoes" aria-selected="false">Minhas Informações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="adicionar-produto-tab" data-toggle="pill" href="/adicionarproduto" role="tab" aria-controls="adicionar-produto" aria-selected="false">Adicionar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="meus-produtos-tab" data-toggle="pill" href="/meusprodutos" role="tab" aria-controls="meus-produtos" aria-selected="false">Meus Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="meus-pedidos-tab" data-toggle="pill" href="/meuspedidosimportador" role="tab" aria-controls="meus-pedidos" aria-selected="false">Meus Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="chat-clientes-tab" data-toggle="pill" href="#chat-clientes" role="tab" aria-controls="chat-clientes" aria-selected="true">Chat com Clientes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="list-group" id="customerList">
+                            <li class="list-group-item d-flex align-items-center">
+                                <img src="https://via.placeholder.com/40" alt="Cliente 1" class="rounded-circle mr-3">
+                                <span>Cliente 1</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <img src="https://via.placeholder.com/40" alt="Cliente 2" class="rounded-circle mr-3">
+                                <span>Cliente 2</span>
+                            </li>
+                            <!-- Adicione mais clientes conforme necessário -->
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="chat-window">
+                            <div class="chat-header d-flex align-items-center justify-content-between p-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://via.placeholder.com/50" alt="Cliente" class="rounded-circle mr-3">
+                                    <div>
+                                        <h5 class="mb-0">Cliente 1</h5>
+                                        <span class="text-muted">Status da Compra: <span class="badge badge-info">Processando</span></span>
+                                        <br>
+                                        <span class="text-muted">Status do Pagamento: <span class="badge badge-danger">Não Pago</span></span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-success btn-sm"><i class="fas fa-check"></i> Marcar como Pago</button>
+                            </div>
+                            <div class="chat-body p-3">
+                                <div class="message sender">
+                                    <div class="message-content p-2 rounded bg-primary text-white">
+                                        Olá, gostaria de saber mais sobre o meu pedido.
+                                    </div>
+                                </div>
+                                <div class="message receiver">
+                                    <div class="message-content p-2 rounded bg-secondary text-white">
+                                        Claro, seu pedido está sendo processado e será enviado em breve.
+                                    </div>
+                                </div>
+                                <!-- Adicione mais mensagens conforme necessário -->
+                            </div>
+                            <div class="chat-footer d-flex p-3">
+                                <input type="text" class="form-control mr-2" placeholder="Digite sua mensagem">
+                                <button class="btn btn-primary mr-2"><i class="fas fa-paperclip"></i></button>
+                                <button class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvvV8AB8If5q4l78CM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlNHjR0AyyQp+d6EFx/q28X1Txswg6w+jfXp65XOZV+5ckb8j4i5I+X0oeg" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+dflw6E5iqKuxau6/6L5D1GyTne0IWeC52Bvrpt9CH25R1wEl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.card-header img {
+    margin-right: 10px;
+}
+
+.card-header span {
+    margin-right: 10px;
+}
+
+.chat-body {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message.sent {
+    background-color: #e2ffc7;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message.received {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+}
+
+.message .time {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.card-footer .form-control {
+    flex: 1;
+}
+
+.input-group-append {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-append button {
+    margin-left: 5px;
+}
