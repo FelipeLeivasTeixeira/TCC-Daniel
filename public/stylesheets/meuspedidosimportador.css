@@ -1,104 +1,174 @@
+/* public/css/meuspedidosimportador.css */
 
+/* Estilos para a lista de pedidos */
+.order-list {
+    margin-top: 2rem;
+}
 
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #F2F2F2;
-    color: #333;
-    margin: 0;
-  }
-  
-  .fade-in {
-    animation: fadeIn 2s ease-in;
-  }
-  
-  .nav-pills .nav-link.active {
-    background-color: #007bff;
-  }
-  
-  .order-list {
-    margin-top: 20px;
-  }
-  
-  .order-item {
+.order-item {
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     background-color: #fff;
-  }
-  
-  .order-header h5 {
-    margin: 0;
-  }
-  
-  .order-date {
-    margin: 0;
-  }
-  
-  .badge-warning {
-    background-color: #ffc107;
-    color: #fff;
-  }
-  
-  .badge-success {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .order-body p {
-    margin: 5px 0;
-  }
-  
-  .order-footer {
-    margin-top: 15px;
-  }
-  
-  .btn-success {
+}
+
+.order-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.order-id, .order-date, .order-status, .importer-name, .order-time {
+    font-family: 'Roboto', sans-serif;
+}
+
+.order-id {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.order-status.text-warning {
+    color: #ffc107;
+    font-size: 1.1rem;
+}
+
+.order-status.text-success {
+    color: #28a745;
+    font-size: 1.1rem;
+}
+
+.product-item {
+    margin-bottom: 1rem;
+}
+
+.product-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price, .product-quantity, .importer-name, .order-time {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.25rem;
+}
+
+.btn-primary {
+    background-color: #00AEEF;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #008FCC;
+}
+
+.btn-success {
     background-color: #28A745;
     border: none;
-  }
-  
-  .btn-success:hover {
+}
+
+.btn-success:hover {
     background-color: #218838;
-  }
-  
-  .btn-primary {
-    background-color: #00AEEF;
+}
+
+.btn-info {
+    background-color: #17a2b8;
     border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #008FCC;
-  }
-  
-  .bi-coin, .bi-credit-card {
-    font-size: 1.2rem;
-    margin-right: 5px;
-  }
-
-/* Alinhar mensagens do cliente à esquerda */
-.message.client .message-content {
-    background-color: #f1f1f1;
-    align-self: flex-start;
 }
 
-.message.client .profile-picture-circle {
+.btn-info:hover {
+    background-color: #138496;
+}
+
+.badge-secondary {
+    background-color: #6c757d;
+}
+
+/* Estilos para os quadrados de upload de fotos */
+.photo-upload-square {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
-/* Alinhar mensagens do importador à direita */
-.message.importer {
-    flex-direction: row-reverse;
+.photo-upload-square input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
-.message.importer .message-content {
-    background-color: #00AEEF;
-    color: white;
-    align-self: flex-end;
+.photo-upload-square i {
+    font-size: 24px;
+    color: #ccc;
 }
 
-.message.importer .profile-picture-circle {
-    margin-left: 10px;
-    margin-right: 0;
+.photo-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.popup-content .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }

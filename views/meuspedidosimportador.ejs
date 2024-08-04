@@ -46,7 +46,10 @@
                                         <h5 class="order-id">Pedido #12345</h5>
                                         <p class="order-date">Data: 01/01/2023</p>
                                     </div>
-                                    <span class="badge badge-warning">Processando</span>
+                                    <div>
+                                        <span class="badge badge-warning">Processando</span>
+                                        <span class="badge badge-secondary">Aguardando Fotos</span>
+                                    </div>
                                 </div>
                                 <div class="order-body">
                                     <p><strong>Cliente:</strong> João Silva</p>
@@ -59,6 +62,7 @@
                                 <div class="order-footer d-flex justify-content-between">
                                     <button class="btn btn-success">Conversar com o Cliente</button>
                                     <button class="btn btn-primary">Marcar como Concluído</button>
+                                    <button class="btn btn-info" onclick="openPhotoPopup()">Adicionar Fotos</button>
                                 </div>
                             </div>
                             <!-- Outro pedido -->
@@ -68,7 +72,10 @@
                                         <h5 class="order-id">Pedido #12346</h5>
                                         <p class="order-date">Data: 02/01/2023</p>
                                     </div>
-                                    <span class="badge badge-success">Concluído</span>
+                                    <div>
+                                        <span class="badge badge-success">Concluído</span>
+                                        <span class="badge badge-success">Fotos Enviadas</span>
+                                    </div>
                                 </div>
                                 <div class="order-body">
                                     <p><strong>Cliente:</strong> Maria Oliveira</p>
@@ -81,6 +88,7 @@
                                 <div class="order-footer d-flex justify-content-between">
                                     <button class="btn btn-success">Conversar com o Cliente</button>
                                     <button class="btn btn-primary">Marcar como Concluído</button>
+                                    <button class="btn btn-info" onclick="openPhotoPopup()">Adicionar Fotos</button>
                                 </div>
                             </div>
                             <!-- Outro pedido -->
@@ -90,7 +98,10 @@
                                         <h5 class="order-id">Pedido #12347</h5>
                                         <p class="order-date">Data: 03/01/2023</p>
                                     </div>
-                                    <span class="badge badge-warning">Processando</span>
+                                    <div>
+                                        <span class="badge badge-warning">Processando</span>
+                                        <span class="badge badge-secondary">Aguardando Fotos</span>
+                                    </div>
                                 </div>
                                 <div class="order-body">
                                     <p><strong>Cliente:</strong> Pedro Santos</p>
@@ -103,6 +114,7 @@
                                 <div class="order-footer d-flex justify-content-between">
                                     <button class="btn btn-success">Conversar com o Cliente</button>
                                     <button class="btn btn-primary">Marcar como Concluído</button>
+                                    <button class="btn btn-info" onclick="openPhotoPopup()">Adicionar Fotos</button>
                                 </div>
                             </div>
                             <!-- Repita a estrutura do pedido para cada pedido do importador -->
@@ -112,10 +124,101 @@
             </div>
         </div>
     </main>
+    
+    <!-- Pop-up de Adicionar Fotos -->
+    <div id="photoPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePhotoPopup()">&times;</span>
+            <h3>Adicionar Fotos</h3>
+            <form>
+                <div class="form-group">
+                    <label for="productPhotos">Fotos do Produto</label>
+                    <div class="d-flex">
+                        <div class="photo-upload-square" onclick="document.getElementById('productPhoto1').click()">
+                            <i class="fas fa-plus"></i>
+                            <input type="file" class="form-control-file d-none" id="productPhoto1" accept="image/*" multiple onchange="previewProductPhotos(event)">
+                        </div>
+                        <div class="photo-upload-square" onclick="document.getElementById('productPhoto2').click()">
+                            <i class="fas fa-plus"></i>
+                            <input type="file" class="form-control-file d-none" id="productPhoto2" accept="image/*" multiple onchange="previewProductPhotos(event)">
+                        </div>
+                        <div class="photo-upload-square" onclick="document.getElementById('productPhoto3').click()">
+                            <i class="fas fa-plus"></i>
+                            <input type="file" class="form-control-file d-none" id="productPhoto3" accept="image/*" multiple onchange="previewProductPhotos(event)">
+                        </div>
+                    </div>
+                    <div id="productPhotoPreview" class="d-flex mt-2"></div>
+                </div>
+                <div class="form-group">
+                    <label for="packagePhotos">Fotos da Embalagem</label>
+                    <div class="d-flex">
+                        <div class="photo-upload-square" onclick="document.getElementById('packagePhoto1').click()">
+                            <i class="fas fa-plus"></i>
+                            <input type="file" class="form-control-file d-none" id="packagePhoto1" accept="image/*" multiple onchange="previewPackagePhotos(event)">
+                        </div>
+                        <div class="photo-upload-square" onclick="document.getElementById('packagePhoto2').click()">
+                            <i class="fas fa-plus"></i>
+                            <input type="file" class="form-control-file d-none" id="packagePhoto2" accept="image/*" multiple onchange="previewPackagePhotos(event)">
+                        </div>
+                        <div class="photo-upload-square" onclick="document.getElementById('packagePhoto3').click()">
+                            <i class="fas fa-plus"></i>
+                            <input type="file" class="form-control-file d-none" id="packagePhoto3" accept="image/*" multiple onchange="previewPackagePhotos(event)">
+                        </div>
+                    </div>
+                    <div id="packagePhotoPreview" class="d-flex mt-2"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Salvar Fotos</button>
+            </form>
+        </div>
+    </div>
+
     <%- include('partials/footer') %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvvV8AB8If5q4l78CM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlNHjR0AyyQp+d6EFx/q28X1Txswg6w+jfXp65XOZV+5ckb8j4i5I+X0oeg" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+dflw6E5iqKuxau6/6L5D1GyTne0IWeC52Bvrpt9CH25R1wEl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function openPhotoPopup() {
+            document.getElementById('photoPopup').style.display = 'flex';
+        }
+
+        function closePhotoPopup() {
+            document.getElementById('photoPopup').style.display = 'none';
+        }
+
+        function previewProductPhotos(event) {
+            const files = event.target.files;
+            const photoPreview = document.getElementById('productPhotoPreview');
+            photoPreview.innerHTML = '';
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('photo-thumb');
+                    photoPreview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewPackagePhotos(event) {
+            const files = event.target.files;
+            const photoPreview = document.getElementById('packagePhotoPreview');
+            photoPreview.innerHTML = '';
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.classList.add('photo-thumb');
+                    photoPreview.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 </html>

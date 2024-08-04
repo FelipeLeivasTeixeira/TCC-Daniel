@@ -179,7 +179,7 @@ footer p {
   position: relative;
   width: 100%;
   height: 100vh; /* Full height */
-  background-image: url('/images/front/indexfrente.jpeg');
+  background-image: url('/images/front/indexfrente.jpg');
   background-size: cover;
   background-position: center;
 }
