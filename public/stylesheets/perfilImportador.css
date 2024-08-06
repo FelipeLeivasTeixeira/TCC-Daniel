@@ -1,57 +1,68 @@
 .profile-picture-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto; 
-  }
-  
-  .profile-picture-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .btn-primary {
-    background-color: #00AEEF;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #008FCC;
-  }
-  
-  .btn-secondary {
-    background-color: #28A745;
-    border: none;
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #218838;
-  }
-  
-  .card-title {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .card {
-    border: none;
-  }
-  
-  .card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .media-body h5 {
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .text-warning {
-    color: #FFD700 !important; 
-  }
-  
-  .font-weight-bold {
-    font-family: 'Montserrat', sans-serif;
-  }
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto; 
+}
+
+.profile-picture-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-primary {
+  background-color: #00AEEF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #008FCC;
+}
+
+.btn-secondary {
+  background-color: #28A745;
+  border: none;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #218838;
+}
+
+/* New CSS for btn-success */
+.btn-success {
+  background-color: #28A745;
+  border: none;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+  border: none;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.media-body h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-warning {
+  color: #FFD700 !important; 
+}
+
+.font-weight-bold {
+  font-family: 'Montserrat', sans-serif;
+}

@@ -1,6 +1,3 @@
-/* public/css/meuspedidosimportador.css */
-
-/* Estilos para a lista de pedidos */
 .order-list {
     margin-top: 2rem;
 }
@@ -88,6 +85,15 @@
 
 .btn-info:hover {
     background-color: #138496;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
 }
 
 .badge-secondary {

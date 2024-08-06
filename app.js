@@ -20,6 +20,8 @@ var adicionarprodutoRouter = require('./routes/adicionarproduto');
 var meusprodutosRouter = require('./routes/meusprodutos');
 var meuspedidosimportadorRouter = require('./routes/meuspedidosimportador');
 var chatimportadorRouter = require('./routes/chatimportador');
+var checkoutRouter = require('./routes/checkout');
+
 
 
 
@@ -52,6 +54,7 @@ app.use('/adicionarproduto', adicionarprodutoRouter);
 app.use('/meusprodutos', meusprodutosRouter);
 app.use('/meuspedidosimportador', meuspedidosimportadorRouter);
 app.use('/chatimportador', chatimportadorRouter);
+app.use('/checkout', checkoutRouter);
 
 
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/chatimportador.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-iBBdHYFq55yUnEad5ncmKbf2l5DsOSD0hC8WIp6PWK0UVKBC1M5la2skTY2G7O/2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 </head>
 <body>
     <%- include('partials/header') %>
@@ -37,13 +37,21 @@
                 <div class="row">
                     <div class="col-md-3">
                         <ul class="list-group" id="customerList">
-                            <li class="list-group-item d-flex align-items-center">
-                                <img src="https://via.placeholder.com/40" alt="Cliente 1" class="rounded-circle mr-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Cliente 1</span>
+                                <span>
+                                    <span class="badge badge-info">Processando</span>
+                                    <span class="badge badge-danger">Aguardando pagamento</span>
+                                    <span class="badge badge-warning">Aguardando fotos</span>
+                                </span>
                             </li>
-                            <li class="list-group-item d-flex align-items-center">
-                                <img src="https://via.placeholder.com/40" alt="Cliente 2" class="rounded-circle mr-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <span>Cliente 2</span>
+                                <span>
+                                    <span class="badge badge-success">Concluído</span>
+                                    <span class="badge badge-success">Pago</span>
+                                    <span class="badge badge-success">Fotos Enviadas</span>
+                                </span>
                             </li>
                             <!-- Adicione mais clientes conforme necessário -->
                         </ul>
@@ -51,34 +59,35 @@
                     <div class="col-md-9">
                         <div class="chat-window">
                             <div class="chat-header d-flex align-items-center justify-content-between p-3">
-                                <div class="d-flex align-items-center">
-                                    <img src="https://via.placeholder.com/50" alt="Cliente" class="rounded-circle mr-3">
-                                    <div>
-                                        <h5 class="mb-0">Cliente 1</h5>
-                                        <span class="text-muted">Status da Compra: <span class="badge badge-info">Processando</span></span>
-                                        <br>
-                                        <span class="text-muted">Status do Pagamento: <span class="badge badge-danger">Não Pago</span></span>
-                                    </div>
+                                <div>
+                                    <h5 class="mb-0">Cliente 1</h5>
+                                    <span class="text-muted">Status da Compra: <span class="badge badge-info">Processando</span></span>
+                                    <br>
+                                    <span class="text-muted">Status do Pagamento: <span class="badge badge-danger">Aguardando pagamento</span></span>
+                                    <br>
+                                    <span class="text-muted">Status de Fotos: <span class="badge badge-warning">Aguardando fotos</span></span>
                                 </div>
-                                <button class="btn btn-success btn-sm"><i class="fas fa-check"></i> Marcar como Pago</button>
+                                <button class="btn btn-success btn-sm"><i class="bi bi-check2"></i> Marcar como Pago</button>
                             </div>
                             <div class="chat-body p-3">
-                                <div class="message sender">
+                                <div class="message received">
                                     <div class="message-content p-2 rounded bg-primary text-white">
                                         Olá, gostaria de saber mais sobre o meu pedido.
                                     </div>
+                                    <span class="message-time">10:30 AM</span>
                                 </div>
-                                <div class="message receiver">
+                                <div class="message sent">
                                     <div class="message-content p-2 rounded bg-secondary text-white">
                                         Claro, seu pedido está sendo processado e será enviado em breve.
                                     </div>
+                                    <span class="message-time">10:32 AM</span>
                                 </div>
                                 <!-- Adicione mais mensagens conforme necessário -->
                             </div>
                             <div class="chat-footer d-flex p-3">
                                 <input type="text" class="form-control mr-2" placeholder="Digite sua mensagem">
-                                <button class="btn btn-primary mr-2"><i class="fas fa-paperclip"></i></button>
-                                <button class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
+                                <button class="btn btn-primary mr-2"><i class="bi bi-paperclip"></i></button>
+                                <button class="btn btn-success"><i class="bi bi-send"></i></button>
                             </div>
                         </div>
                     </div>
@@ -92,6 +101,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvvV8AB8If5q4l78CM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlNHjR0AyyQp+d6EFx/q28X1Txswg6w+jfXp65XOZV+5ckb8j4i5I+X0oeg" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+dflw6E5iqKuxau6/6L5D1GyTne0IWeC52Bvrpt9CH25R1wEl" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.js"></script>
 </body>
 </html>

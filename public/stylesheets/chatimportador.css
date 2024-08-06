@@ -1,65 +1,85 @@
-.card-header {
+/* Estilos específicos para a página de chat */
+.chat-window {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 75vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 10px;
+}
+
+.chat-header {
     background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.card-header img {
-    margin-right: 10px;
-}
-
-.card-header span {
-    margin-right: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .chat-body {
-    max-height: 400px;
+    flex: 1;
     overflow-y: auto;
     padding: 10px;
-    background-color: #ffffff;
 }
 
 .message {
     margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
     position: relative;
-}
-
-.message p {
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .message.sent {
+    align-items: flex-end;
+}
+
+.message-content {
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 70%;
+}
+
+.message.received .message-content {
     background-color: #e2ffc7;
-    align-self: flex-end;
-    text-align: right;
+    text-align: left;
+    position: relative;
 }
 
-.message.received {
+.message.sent .message-content {
     background-color: #f1f1f1;
-    align-self: flex-start;
+    text-align: right;
+    position: relative;
 }
 
-.message .time {
+.message-time {
     display: block;
     font-size: 0.8em;
     color: #666;
     margin-top: 5px;
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
 }
 
-.card-footer {
+.message.received .message-time {
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+}
+
+.message.sent .message-time {
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+}
+
+.chat-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
     display: flex;
     align-items: center;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #dee2e6;
 }
 
-.card-footer .form-control {
+.chat-footer .form-control {
     flex: 1;
 }
 
@@ -70,4 +90,22 @@
 
 .input-group-append button {
     margin-left: 5px;
+}
+
+#customerList .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Adiciona flex wrap para evitar que as etiquetas saiam da área do cliente */
+}
+
+#customerList .list-group-item .badge {
+    margin-right: 4px;
+    margin-bottom: 4px;
+    white-space: nowrap; /* Garante que o texto dentro da badge não quebre em múltiplas linhas */
+}
+
+/* Ajuste dos ícones no chat */
+.chat-footer .btn i {
+    font-size: 1.2em;
 }

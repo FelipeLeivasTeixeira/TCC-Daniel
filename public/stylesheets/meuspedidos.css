@@ -1,83 +1,176 @@
-/* public/css/meuspedidos.css */
-
-/* Estilos para a lista de pedidos */
 .order-list {
-    margin-top: 2rem;
-  }
-  
-  .order-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background-color: #fff;
-  }
-  
-  .order-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .order-id, .order-date, .order-status, .importer-name, .order-time {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .order-id {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  
-  .order-status.text-warning {
-    color: #ffc107;
-    font-size: 1.1rem;
-  }
-  
-  .order-status.text-success {
-    color: #28a745;
-    font-size: 1.1rem;
-  }
-  
-  .product-item {
-    margin-bottom: 1rem;
-  }
-  
-  .product-image {
-    width: 120px; /* Aumentando o tamanho da imagem */
-    height: 120px; /* Aumentando o tamanho da imagem */
-    object-fit: cover;
-  }
-  
-  .product-info {
-    flex: 1;
-  }
-  
-  .product-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-price, .product-quantity, .importer-name, .order-time {
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 0.25rem;
-  }
-  
-  .btn-primary {
-    background-color: #00AEEF;
-    border: none;
-  }
-  
-  .btn-primary:hover {
-    background-color: #008FCC;
-  }
-  
-  .btn-success {
-    background-color: #28A745;
-    border: none;
-  }
-  
-  .btn-success:hover {
-    background-color: #218838;
-  }
-  
+  margin-top: 2rem;
+}
+
+.order-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.order-header {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.order-id, .order-date, .order-status, .importer-name, .order-time, .delivery-address {
+  font-family: 'Roboto', sans-serif;
+}
+
+.order-id {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.order-status.text-warning {
+  color: #ffc107;
+  font-size: 1.1rem;
+}
+
+.order-status.text-success {
+  color: #28a745;
+  font-size: 1.1rem;
+}
+
+.product-item {
+  margin-bottom: 1rem;
+}
+
+.product-image {
+  width: 120px; /* Aumentando o tamanho da imagem */
+  height: 120px; /* Aumentando o tamanho da imagem */
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price, .product-quantity, .importer-name, .order-time, .delivery-address {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 0.25rem;
+}
+
+.btn-primary {
+  background-color: #00AEEF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #008FCC;
+}
+
+.btn-success {
+  background-color: #28A745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+/* Estilos para os quadrados de upload de fotos */
+.photo-upload-square {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.photo-upload-square input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.photo-upload-square i {
+  font-size: 24px;
+  color: #ccc;
+}
+
+.photo-thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.photo-thumb-large {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Pop-up */
+.popup {
+  display: none; /* Esconde o pop-up inicialmente */
+  position: fixed; /* Permite que o pop-up seja posicionado em relação à janela do navegador */
+  z-index: 1000; /* Garante que o pop-up esteja acima de outros elementos */
+  left: 0; /* Posiciona o pop-up no início da janela (esquerda) */
+  top: 0; /* Posiciona o pop-up no início da janela (topo) */
+  width: 100%; /* Garante que o pop-up cubra toda a largura da janela */
+  height: 100%; /* Garante que o pop-up cubra toda a altura da janela */
+  overflow: auto; /* Permite a rolagem se o conteúdo do pop-up for maior que a janela */
+  background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente */
+  display: flex; /* Adiciona o flexbox */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+.popup-content {
+  background-color: #fff; /* Cor de fundo do conteúdo do pop-up */
+  padding: 20px; /* Espaçamento interno do conteúdo do pop-up */
+  border: 1px solid #888; /* Borda ao redor do conteúdo do pop-up */
+  width: 80%; /* Largura do conteúdo do pop-up */
+  max-width: 600px; /* Largura máxima do conteúdo do pop-up */
+  border-radius: 10px; /* Bordas arredondadas */
+  position: relative; /* Posicionamento relativo para o botão de fechar */
+}
+
+.popup-content .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
