@@ -8,7 +8,7 @@ body, form, h2, label, input, select, button {
   font-family: 'Roboto', sans-serif; 
 }
 
-/* Restante do seu CSS permanece igual */
+/* Animação de fade-in */
 .fade-in {
   animation: fadeIn 2s ease-in;
 }
@@ -109,6 +109,7 @@ main {
 .hero-section h1 {
   font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
+  font-weight: normal; /* Remover negrito */
 }
 
 .hero-section p {
@@ -136,7 +137,6 @@ main {
 }
 
 .header-btn, .header-login-btn {
-  font-family: 'Roboto', sans-serif;
   height: 40px; /* Ajuste a altura conforme necessário */
   line-height: 40px; /* Deve ser igual à altura para centralização vertical */
   display: inline-block;
@@ -184,7 +184,6 @@ footer p {
   font-size: 0.875rem;
 }
 
-/* Custom styles for registration page */
 .d-flex {
   display: flex;
 }
@@ -205,7 +204,6 @@ footer p {
   width: 100%;
 }
 
-/* Ensure background image covers entire right column */
 .bg-image {
   position: relative;
   width: 100%;
@@ -313,4 +311,23 @@ label[for="profilePicture"] {
 .how-it-works-section ul {
   list-style-type: disc;
   padding-left: 20px;
+}
+
+/* Estilos adicionais para a página do usuário logado */
+.navbar .dropdown-toggle img {
+    border: 2px solid #fff; /* Borda branca ao redor da imagem */
+}
+
+.dropdown-menu {
+    background-color: #003366; /* Cor de fundo do dropdown */
+    border: none; /* Remover borda padrão */
+}
+
+.dropdown-item {
+    color: #fff; /* Cor do texto dos itens */
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+}
+
+.dropdown-item:hover {
+    background-color: #00AEEF; /* Cor de fundo ao passar o mouse */
 }

@@ -1,0 +1,22 @@
+/* Adicionar ao seu arquivo CSS */
+
+/* Estilo para a imagem de perfil na navbar */
+.navbar .dropdown-toggle img {
+    border: 2px solid #fff; /* Borda branca ao redor da imagem */
+}
+
+/* Estilo para o dropdown */
+.dropdown-menu {
+    background-color: #003366; /* Cor de fundo do dropdown */
+    border: none; /* Remover borda padrão */
+}
+
+/* Estilo para os itens do dropdown */
+.dropdown-item {
+    color: #fff; /* Cor do texto dos itens */
+    transition: background-color 0.3s ease; /* Transição suave para o fundo */
+}
+
+.dropdown-item:hover {
+    background-color: #00AEEF; /* Cor de fundo ao passar o mouse */
+}

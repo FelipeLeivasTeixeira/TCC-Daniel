@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImportAê - Plataforma Simplificadora de Importação</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/loggedin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <%- include('partials/headerlogado') %>
+  <main class="fade-in">
+      <!-- Hero Section -->
+      <div class="hero-section" style="background-image: url('/images/front/indexfrente.jpg');">
+        <div class="hero-content">
+            <img src="/images/logoimportae.png" alt="ImportAê Logo" class="hero-logo">
+            <h1 style="color: white;">ImportAê</h1>
+            <p style="color: white;">Bem-vindo de volta, [Nome do Usuário]</p>
+            <div class="mt-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Pesquise seu produto...">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">Pesquisar</button>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-secondary btn-lg" type="button" onclick="window.location.href='/meus-pedidos'">
+                        <i class="bi bi-box-seam"></i> Meus Pedidos
+                    </button>
+                    <button class="btn btn-secondary btn-lg" type="button" onclick="window.location.href='/chat'">
+                        <i class="bi bi-chat-dots"></i> Chat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Advantages Section -->
+      <div class="advantages-section py-5 bg-light">
+          <div class="container">
+              <div class="row text-center">
+                  <div class="col-md-4">
+                      <div class="advantage-item">
+                          <img src="images/icons/comunidades.png" alt="Comunicação Segura" class="mb-3">
+                          <h3>Comunicação Segura</h3>
+                          <p>Garantimos uma comunicação segura e eficiente com nossos clientes e importadores.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="advantage-item">
+                          <img src="images/icons/produtos.png" alt="Processos Simplificados" class="mb-3">
+                          <h3>Processos Simplificados</h3>
+                          <p>Nossa plataforma simplifica todo o processo de importação para você.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="advantage-item">
+                          <img src="images/icons/caixa.png" alt="Suporte 24/7" class="mb-3">
+                          <h3>Melhores Produtos</h3>
+                          <p>Encontre na nossa plataforma os melhores produtos importados da atualidade.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- How It Works Section -->
+      <div class="how-it-works-section py-5">
+          <div class="container">
+              <h2 class="text-center mb-4">Como Funciona?</h2>
+              <div class="row">
+                  <div class="col-md-12">
+                      <p>Nossa plataforma permite que você escolha o produto que deseja importar e conectamos você diretamente com o importador. O pagamento é feito diretamente com o importador, garantindo transparência e segurança. Você poderá ver fotos do produto e da embalagem antes do envio, para ter certeza da qualidade e das condições de transporte.</p>
+                      <ul>
+                          <li>Escolha seu produto na nossa plataforma.</li>
+                          <li>Conectamos você com o importador.</li>
+                          <li>Pagamento direto com o importador.</li>
+                          <li>Veja fotos do produto e da embalagem antes do envio.</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </main>
+  <%- include('partials/footer') %>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvvV8AB8If5q4l78CM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlNHjR0AyyQp+d6EFx/q28X1Txswg6w/jfXp65XOZV+5ckb8j4i5I+X0oeg" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+dflw6E5iqKuxau6/6L5D1GyTne0IWeC52Bvrpt9CH25R1wEl" crossorigin="anonymous"></script>
+</body>
+</html>

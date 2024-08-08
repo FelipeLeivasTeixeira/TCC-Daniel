@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <%- include('partials/header') %>
+    <%- include('partials/headerlogado') %>
     <main class="fade-in container mt-4">
         <div class="row">
             <!-- Informações do Importador -->
@@ -25,7 +25,7 @@
                 <button class="btn btn-primary mb-2">
                     <i class="fas fa-comments"></i> Converse com o Importador
                 </button>
-                <button class="btn btn-success mb-3">
+                <button class="btn btn-success mb-3" onclick="openProductRequestPopup()">
                     <i class="fas fa-box"></i> Solicitar um Produto
                 </button>
                 <h4>Sobre o Importador</h4>
@@ -66,10 +66,65 @@
             </div>
         </div>
     </main>
+
+    <!-- Pop-up de Solicitação de Produto -->
+    <div id="productRequestPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeProductRequestPopup()">&times;</span>
+            <h3>Solicitar Produto</h3>
+            <form>
+                <div class="form-group">
+                    <label for="productName">Nome do Produto</label>
+                    <input type="text" class="form-control" id="productName" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Preço</label>
+                    <input type="text" class="form-control" id="productPrice" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="productImageUpload">Imagem do Produto</label>
+                    <div class="photo-upload">
+                        <div class="photo-box" onclick="document.getElementById('productImageInput').click()">
+                            <i class="bi bi-plus-lg"></i>
+                        </div>
+                        <input type="file" id="productImageInput" class="d-none" accept="image/*" onchange="previewProductImage(event)">
+                    </div>
+                    <div id="productImagePreview" class="mt-2"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Solicitação</button>
+            </form>
+        </div>
+    </div>
+
     <%- include('partials/footer') %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvvV8AB8If5q4l78CM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlNHjR0AyyQp+d6EFx/q28X1Txswg6w+jfXp65XOZV+5ckb8j4i5I+X0oeg" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+dflw6E5iqKuxau6/6L5D1GyTne0IWeC52Bvrpt9CH25R1wEl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function openProductRequestPopup(name = '', price = '') {
+            document.getElementById('productName').value = name;
+            document.getElementById('productPrice').value = price;
+            document.getElementById('productRequestPopup').style.display = 'block';
+        }
+
+        function closeProductRequestPopup() {
+            document.getElementById('productRequestPopup').style.display = 'none';
+        }
+
+        function previewProductImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('photo-thumb');
+                const previewContainer = document.getElementById('productImagePreview');
+                previewContainer.innerHTML = ''; // Limpa o conteúdo anterior
+                previewContainer.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
 </body>
 </html>
