@@ -25,7 +25,7 @@
                 <div class="w-75">
                     <h2 class="text-center montserrat">Cadastro de Cliente</h2>
                     <p class="text-center small"><a href="/registroImportador" class="importador-link">Sou um importador</a></p>
-                    <form>
+                    <form action="/registro" method="POST">
                         <div class="form-group text-center">
                             <label class="d-block">Foto de Perfil</label>
                             <label for="profilePicture" class="d-block position-relative">
@@ -34,34 +34,34 @@
                                     <i class="fas fa-pencil-alt edit-icon" style="display: none;"></i>
                                 </div>
                             </label>
-                            <input type="file" class="form-control-file d-none" id="profilePicture" accept="image/*" onchange="previewProfilePicture(event)">
+                            <input type="file" name="fotoPerfil" class="form-control-file d-none" id="profilePicture" accept="image/*" onchange="previewProfilePicture(event)">
                         </div>
                         <div class="form-group">
                             <label for="name">Nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="Seu Nome">
+                            <input type="text" name="nome" class="form-control" id="name" placeholder="Seu Nome" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Seu Email">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Seu Email" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Senha</label>
-                            <input type="password" class="form-control" id="password" placeholder="Sua Senha">
+                            <input type="password" name="senha" class="form-control" id="password" placeholder="Sua Senha" required>
                         </div>
                         <div class="form-group">
                             <label for="confirmPassword">Confirmar Senha</label>
-                            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme Sua Senha">
+                            <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirme Sua Senha" required>
                         </div>
                         <div class="form-group">
                             <label for="birthdate">Data de Nascimento</label>
-                            <input type="date" class="form-control" id="birthdate">
+                            <input type="date" name="dataNascimento" class="form-control" id="birthdate">
                         </div>
                         <div class="form-group">
                             <label for="phone">Telefone</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="countryCode" placeholder="+55" style="max-width: 60px;">
-                                <input type="text" class="form-control" id="areaCode" placeholder="DDD" style="max-width: 60px;">
-                                <input type="text" class="form-control" id="phone" placeholder="Seu Telefone">
+                                <input type="text" name="countryCode" class="form-control" id="countryCode" placeholder="+55" style="max-width: 60px;">
+                                <input type="text" name="areaCode" class="form-control" id="areaCode" placeholder="DDD" style="max-width: 60px;">
+                                <input type="text" name="telefone" class="form-control" id="phoneInput" placeholder="Seu Telefone">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Registrar</button>

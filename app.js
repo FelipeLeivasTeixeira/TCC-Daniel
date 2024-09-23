@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var passport = require('passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -53,6 +54,28 @@ app.use('/checkout', checkoutRouter);
 app.use('/indexlogado', indexlogadoRouter);
 
 const sequelize = require('./config/db.js');
+const session = require('express-session');
+
+const Cliente = require('./models/cliente'); // Ajuste o caminho conforme necessário
+const Vendedor = require('./models/vendedor'); // Ajuste o caminho conforme necessário
+
+sequelize.sync({ alter: true }) // Adicione esta linha para sincronizar as models
+  .then(() => {
+    console.log('Models sincronizadas com sucesso.');
+  })
+  .catch(err => {
+    console.error('Erro ao sincronizar as models:', err);
+  });
+
+app.use(session({
+  secret: 'seuSegredoAqui',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 
 
