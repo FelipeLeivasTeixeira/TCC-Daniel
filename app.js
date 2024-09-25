@@ -8,7 +8,6 @@ var passport = require('passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var registroRouter = require('./routes/registro');
-var registroImportadorRouter = require('./routes/registroImportador');
 var produtosRouter = require('./routes/produtos');
 var chatRouter = require('./routes/chat');
 var perfilImportadorRouter = require('./routes/perfilImportador');
@@ -38,7 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/registro', registroRouter);
-app.use('/registroImportador', registroImportadorRouter);
 app.use('/produtos', produtosRouter);
 app.use('/chat', chatRouter);
 app.use('/perfilImportador', perfilImportadorRouter);
@@ -56,8 +54,6 @@ app.use('/indexlogado', indexlogadoRouter);
 const sequelize = require('./config/db.js');
 const session = require('express-session');
 
-const Cliente = require('./models/cliente'); // Ajuste o caminho conforme necessário
-const Vendedor = require('./models/vendedor'); // Ajuste o caminho conforme necessário
 
 sequelize.sync({ alter: true }) // Adicione esta linha para sincronizar as models
   .then(() => {
@@ -67,11 +63,14 @@ sequelize.sync({ alter: true }) // Adicione esta linha para sincronizar as model
     console.error('Erro ao sincronizar as models:', err);
   });
 
-app.use(session({
-  secret: 'seuSegredoAqui',
-  resave: false,
-  saveUninitialized: false,
-}));
+  app.use(session({
+    secret: 'seu_segredo_aqui',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 3600000 // 1 hora
+    }
+  }));
 
 app.use(passport.initialize());
 app.use(passport.session());
